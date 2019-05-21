@@ -45,8 +45,8 @@ Use passport.authenticate(), specifying the 'google' strategy, to authenticate r
 For example, as route middleware in an Express application:
 
 <code>
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+<span>app.get('/auth/google',
+    passport.authenticate('google', { scope: ['profile'] }));</span>
 
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
