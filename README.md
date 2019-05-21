@@ -22,7 +22,7 @@ hashing techniques are implemented to improve password protection.
 ## Configure Strategy
 The Google authentication strategy authenticates users using a Google account and OAuth 2.0 tokens. The client ID and secret obtained when creating an application are supplied as options when creating the strategy. The strategy also requires a verify callback, which receives the access token and optional refresh token, as well as profile which contains the authenticated user's Google profile. The verify callback must call cb providing a user to complete authentication.
 
-```xml
+```javascript
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 passport.use(new GoogleStrategy({
@@ -44,9 +44,9 @@ Use passport.authenticate(), specifying the 'google' strategy, to authenticate r
 
 For example, as route middleware in an Express application:
 
-```xml
+```javascript
 <span>app.get('/auth/google',
-    passport.authenticate('google', { scope: ['profile'] }));</span>
+    passport.authenticate('google', { scope: ['profile'] }));
 
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
